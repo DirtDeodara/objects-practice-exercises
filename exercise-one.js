@@ -8,4 +8,17 @@ animalConstructor.prototype.speak = function() {
   console.log(`Why, yes! I am indeed a beautiful ${this.species}. My name is ${this.name}`);
 };
 
-module.exports = { animalConstructor };
+
+const animalFactory = function(name, species) {
+  return {
+    name,
+    species,
+    speak() {
+      return `My name is ${this.name} and I'm a ${this.species}.`;
+    }
+  };
+};
+
+
+
+module.exports = { animalConstructor, animalFactory };
