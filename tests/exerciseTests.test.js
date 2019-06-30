@@ -1,7 +1,9 @@
+const uuidv4 = require('uuid/v4');
 const { animalConstructor, animalFactory, animalClass } = require('../exercise-one');
 const House = require('../exercise-two');
 const Car = require('../exercise-three');
 const Colors = require('../exercise-four');
+const User = require('../execise-five');
 
 describe('exercise one', () => {
   it('tests that the constructor returns the right object', ()  => {
@@ -84,5 +86,19 @@ describe('exercise four', () => {
     myColors.addColor('red');
     expect(myColors.hasColor('red')).toEqual(true);
   
+  });
+});
+
+describe('exercise five', () => {
+  it('test that the correct user object is created and id generated', () => {
+    const myUser = new User('Dirt', 'dirt@email.com', 'sneaky');
+    myUser.id = uuidv4();
+    expect(myUser).toEqual({
+      name: 'Dirt',
+      email: 'dirt@email.com',
+      password: 'sneaky',
+      id: myUser.id
+    });
+    console.log(myUser.id);
   });
 });
