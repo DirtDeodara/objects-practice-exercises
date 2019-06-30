@@ -78,4 +78,11 @@ describe('exercise four', () => {
     expect(myColors.addColor('red')).toEqual(['red']);
   
   });
+
+  it('test that the hasColor method works', () => {
+    const myColors = new Colors();
+    myColors.addColor('red');
+    expect(myColors.hasColor('red')).toEqual(true);
+  
+  });
 });
