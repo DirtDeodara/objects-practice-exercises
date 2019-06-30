@@ -14,7 +14,7 @@ const animalFactory = function(name, species) {
     name,
     species,
     speak() {
-      return `My name is ${this.name} and I'm a ${species}.`;
+      return `My name is ${this.name} and Im a ${this.species}.`;
     }
   };
 };
