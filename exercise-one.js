@@ -14,11 +14,21 @@ const animalFactory = function(name, species) {
     name,
     species,
     speak() {
-      return `My name is ${this.name} and I'm a ${this.species}.`;
+      return `My name is ${this.name} and I'm a ${species}.`;
     }
   };
 };
 
+class animalClass {
+  constructor(name, species) {
+    this.name = name;
+    this.species = species;
+  }
+  speak() {
+    return (`My name is ${this.name} and I'm an amazing ${this.species}.`);
+  }
+}
 
 
-module.exports = { animalConstructor, animalFactory };
+
+module.exports = { animalConstructor, animalFactory, animalClass };
