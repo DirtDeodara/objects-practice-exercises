@@ -1,4 +1,5 @@
 const { animalConstructor, animalFactory, animalClass } = require('../exercise-one');
+const House = require('../exercise-two');
 
 describe('exercise one', () => {
   it('tests that the constructor returns the right object', ()  => {
@@ -25,5 +26,21 @@ describe('exercise one', () => {
     });
   });
 
+});
 
+describe('exercise two', () => {
+  it('tests that the right house is created', () => {
+    const myHouse = new House('Hollywood District', 1, 2, 1);
+    expect(myHouse).toEqual({
+      location: 'Hollywood District',
+      floors: 1,
+      bedrooms: 2,
+      bathrooms: 1
+    });
+  });
+
+  it('tests that the right price is returned', () => {
+    const myHouse = new House('Hollywood District', 1, 2, 1);
+    expect(myHouse.price(1, 2, 1)).toEqual(120000);
+  });
 });
