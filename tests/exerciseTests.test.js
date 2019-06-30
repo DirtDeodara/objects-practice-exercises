@@ -99,6 +99,18 @@ describe('exercise five', () => {
       password: 'sneaky',
       id: myUser.id
     });
-    console.log(myUser.id);
+  });
+
+  it('test that the correct string is returned from the toString method', () => {
+    const myUser = new User('Dirt', 'dirt@email.com', 'sneaky');
+    myUser.id = uuidv4();
+    expect(myUser.toString()).toEqual('Dirt dirt@email.com');
+  });
+
+  it('test that the a password can be reset', () => {
+    const myUser = new User('Dirt', 'dirt@email.com', 'sneaky');
+    myUser.id = uuidv4();
+    myUser.resetPassword('sneaky', 'moreSneaky');
+    expect(myUser.password).toEqual('moreSneaky');
   });
 });

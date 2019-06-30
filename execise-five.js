@@ -7,6 +7,16 @@ class User {
     this.password = password;
     this.id = uuidv4();
   }
+  toString() {
+    return this.name + ' ' + this.email;
+  }
+  resetPassword(oldPassword, newPassword) {
+    if(oldPassword === this.password) {
+      this.password = newPassword;
+    } else {
+      return 'error';
+    }
+  }
 }
 
 module.exports = User;
