@@ -1,6 +1,7 @@
 const { animalConstructor, animalFactory, animalClass } = require('../exercise-one');
 const House = require('../exercise-two');
 const Car = require('../exercise-three');
+const Colors = require('../exercise-four');
 
 describe('exercise one', () => {
   it('tests that the constructor returns the right object', ()  => {
@@ -61,5 +62,20 @@ describe('execise three', () => {
   it('tests that the drive method adds to this.miles', () => {
     const myCar = new Car('Toyota', 'Tacoma', 2002, 'Burgundy');
     expect(myCar.drive(100)).toEqual(100);
+  });
+});
+
+describe('exercise four', () => {
+  it('test that the right object it returned', () => {
+    const myColors = new Colors();
+    expect(myColors).toEqual({
+      favorites: []
+    });
+  });
+
+  it('test that the addColor method works', () => {
+    const myColors = new Colors();
+    expect(myColors.addColor('red')).toEqual(['red']);
+  
   });
 });
